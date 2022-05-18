@@ -29,5 +29,16 @@ begin
   -- não precisa implementar os demais
   --=================================--
 
+  -- Sinal do MUX ALUI
+  muxALUI <= '0' when instruction(17 downto 16) = "10" else '1';
+
+  -- Sinal de Load do Registrador A
+  loadA <= (not(instruction(17)) and not(instruction(16))) or 
+      (instruction(17) and not(instruction(16)) and (instruction(3))) or 
+      (instruction(17) and (instruction(16)));
+  -- Sinal de LOAD do Registrador D
+  loadD <= (instruction(17) and not(instruction(16)) and instruction(4)) or
+  (instruction(17) and instruction(16)) or
+  (not(instruction(17)) and instruction(16));
 
 end architecture;

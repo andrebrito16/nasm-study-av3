@@ -1,7 +1,9 @@
 Item a) Determine o valor na saída da ULA e nos registradores %D e %A imediatamente após o processamento da instrução.
 
-ALU_saida:
-%D:
-%A:
+ALU_saida: 1000000000000000
+%D: 1000000000000000
+%A: 0000000000000000
 
 Item b) Quais são as linhas em Assembly que efetuariam a mesma operação dessa nova instrução?
+notw %D
+jg %D
